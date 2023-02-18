@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import subprocess
 
 NETWORK_CONFIG = {
@@ -7,7 +9,7 @@ NETWORK_CONFIG = {
 }
 
 def check_connectivity(source: str, destination: str) -> bool:
-    response = subprocess.run(["docker", "exec", source, "ping", "-I", NETWORK_CONFIG[source], NETWORK_CONFIG[destination], "-c", "4"], capture_output=True)
+    response = subprocess.run(["docker", "exec", source, "ping", "-I", NETWORK_CONFIG[source], NETWORK_CONFIG[destination], "-c", "1"], capture_output=True)
     return False if response.returncode else True
 
 if __name__ == "__main__":
