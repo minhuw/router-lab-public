@@ -1,0 +1,35 @@
+name: topo
+prefix: ""
+
+mgmt:
+  network: statics
+  ipv4_subnet: 172.100.100.0/24
+
+topology:
+  kinds:
+    ceos:
+      image: ceos:4.28.3
+  nodes:
+    R1:
+      kind: ceos
+      mgmt_ipv4: 172.100.100.11
+      startup-config: start/R1.conf
+    R2:
+      kind: ceos
+      mgmt_ipv4: 172.100.100.12
+      startup-config: start/R2.conf
+    R3:
+      kind: ceos
+      mgmt_ipv4: 172.100.100.13
+      startup-config: start/R3.conf
+    R4:
+      kind: ceos
+      mgmt_ipv4: 172.100.100.14
+      startup-config: start/R4.conf
+
+  links:
+    - endpoints: ["R1:eth2", "R2:eth1"]
+    - endpoints: ["R1:eth1", "R3:eth1"]
+    - endpoints: ["R2:eth2", "R4:eth1"]
+    - endpoints: ["R3:eth2", "R4:eth2"]
+

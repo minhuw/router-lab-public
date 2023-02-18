@@ -5,7 +5,8 @@ import subprocess
 NETWORK_CONFIG = {
     "R1": "1.1.1.1",
     "R2": "2.2.2.2",
-    "R3": "3.3.3.3"
+    "R3": "3.3.3.3",
+    "R4": "4.4.4.4"
 }
 
 def check_connectivity(source: str, destination: str) -> bool:
