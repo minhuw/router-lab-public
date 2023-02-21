@@ -8,28 +8,24 @@ mgmt:
 topology:
   kinds:
     ceos:
-      image: ceos:4.29.2F
+      image: ceos:4.29.2
   nodes:
     R1:
       kind: ceos
       mgmt_ipv4: 172.100.100.11
       startup-config: start/R1.conf
-      memory: 0.5Gb
     R2:
       kind: ceos
       mgmt_ipv4: 172.100.100.12
       startup-config: start/R2.conf
-      memory: 0.5Gb
     R3:
       kind: ceos
       mgmt_ipv4: 172.100.100.13
       startup-config: start/R3.conf
-      memory: 0.5Gb
     R4:
       kind: ceos
       mgmt_ipv4: 172.100.100.14
       startup-config: start/R4.conf
-      memory: 0.5Gb
 
   links:
     - endpoints: ["R1:eth2", "R2:eth1"]
