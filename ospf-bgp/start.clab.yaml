@@ -14,49 +14,41 @@ topology:
       kind: ceos
       mgmt_ipv4: 172.100.100.11
       startup-config: start/R1.conf
-      cpu: 0.5
       memory: 0.5Gb
     R2:
       kind: ceos
       mgmt_ipv4: 172.100.100.12
       startup-config: start/R2.conf
-      cpu: 0.5
       memory: 0.5Gb
     R3:
       kind: ceos
       mgmt_ipv4: 172.100.100.13
       startup-config: start/R3.conf
-      cpu: 0.5
       memory: 0.5Gb
     R4:
       kind: ceos
       mgmt_ipv4: 172.100.100.14
       startup-config: start/R4.conf
-      cpu: 0.5
       memory: 0.5Gb
     R5:
       kind: ceos
       mgmt_ipv4: 172.100.100.15
       startup-config: start/R5.conf
-      cpu: 0.5
       memory: 0.5Gb
     R6:
       kind: ceos
       mgmt_ipv4: 172.100.100.16
       startup-config: start/R6.conf
-      cpu: 0.5
       memory: 0.5Gb
     R7:
       kind: ceos
       mgmt_ipv4: 172.100.100.17
       startup-config: start/R7.conf
-      cpu: 0.5
       memory: 0.5Gb
     R8:
       kind: ceos
       mgmt_ipv4: 172.100.100.18
       startup-config: start/R8.conf
-      cpu: 0.5
       memory: 0.5Gb
   links:
     - endpoints: ["R1:eth1", "R5:eth1"]
