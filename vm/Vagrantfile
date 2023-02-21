@@ -78,6 +78,6 @@ Vagrant.configure("2") do |config|
   # SHELL
   config.vm.provision "file", source: "~/Documents/router-lab/vm/cEOS-lab-4.29.2F.tar", destination: "/tmp/cEOS-lab-4.29.2F.tar"
   config.vm.provision "docker"
-  config.vm.provision "shell", inline: "docker import /tmp/cEOS-lab-4.29.2F.tar ceos:4.29.2"
+  config.vm.provision "shell", inline: "docker import /tmp/cEOS-lab-4.29.2F.tar ceos:4.29.2 && rm /tmp/cEOS-lab-4.29.2F.tar"
   config.vm.provision "shell", inline: 'bash -c "$(curl -sL https://get.containerlab.dev)"'
 end
