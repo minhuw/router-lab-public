@@ -16,8 +16,8 @@ Vagrant.configure("2") do |config|
 
   config.vm.provider "virtualbox" do |v|
     v.name = "router-lab"
-    v.memory = 2048
-    v.cpus = 2
+    v.memory = 8192
+    v.cpus = 4
   end
 
   config.ssh.insert_key = true
@@ -76,8 +76,8 @@ Vagrant.configure("2") do |config|
   #   apt-get update
   #   apt-get install -y apache2
   # SHELL
-  config.vm.provision "file", source: "~/Documents/router-lab/vm/cEOS64-lab-4.29.2F.tar", destination: "/tmp/cEOS64-lab-4.29.2F.tar"
+  config.vm.provision "file", source: "~/Documents/router-lab/vm/cEOS-lab-4.29.2F.tar", destination: "/tmp/cEOS-lab-4.29.2F.tar"
   config.vm.provision "docker"
-  config.vm.provision "shell", inline: "docker import /tmp/cEOS64-lab-4.29.2F.tar ceos:4.29.2F"
+  config.vm.provision "shell", inline: "docker import /tmp/cEOS-lab-4.29.2F.tar ceos:4.29.2"
   config.vm.provision "shell", inline: 'bash -c "$(curl -sL https://get.containerlab.dev)"'
 end
