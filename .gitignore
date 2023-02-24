@@ -1,3 +1,4 @@
 *.yml.bak
+*.yaml.bak
 .vscode
 .vagrant
