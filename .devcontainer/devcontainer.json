@@ -1,0 +1,7 @@
+{
+    "name": "Router Lab",
+    "image": "docker.io/minhuw/router-lab:latest",
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    }
+}
