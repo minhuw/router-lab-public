@@ -8,9 +8,9 @@ then
     exit 1
 fi
 
+containerlab save -t start.clab.yaml && tar czvf "router_submit_$1.tar.gz" ./clab-topo/*/flash/startup-config
+
 mkdir -p ./solution
 for node in ./clab-topo/*/ ; do
     cp $node/flash/startup-config ./solution/$(basename $node).conf
 done
-
-containerlab save -t start.clab.yaml && tar czvf "router_submit_$1.tar.gz" ./clab-topo/*/flash/startup-config
